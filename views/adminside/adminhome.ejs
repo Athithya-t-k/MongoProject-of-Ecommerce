@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+        }
+
+        header {
+            background-color:  #e90b6f;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #e90b59;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <form action="/adminhome" method="post">
+
+    <header>
+        <h1>ADMIN HOME PAGE</h1>
+    </header>
+
+    <nav>
+        <a href="/adminside/product">PRODUCT FORM</a> |
+        <a href="/adminside/productlist">PRODUCT LIST FORM</a> |
+        <!-- <a href="/adminside/productedit">PRODUCT EDIT FORM</a> | -->
+        <a href="/adminside/userslist">USERS LIST</a>
+    </nav>
+
+    <section>
+        <h2>Welcome to the Admin Home Page</h2>
+       
+    </section>
+
+    <footer>
+        &copy; 2023 Admin Dashboard
+    </footer>
+</form>
+<a href="/Logout">Logout</a>
+</body>
+</html>

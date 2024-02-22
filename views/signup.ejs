@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <center>
+    <form action="/signup" method="post" onsubmit=" return signFunction()">
+        <h1>SIGNUP HERE</h1>
+        <label for="Username">Username</label><br>
+        <input type="text" id="Username" name="Username" placeholder="Username" required ><br><br>  
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email" placeholder="ENTER THE EMAIL" required><br><br>
+    
+        <label for="Password">Password</label><br>
+        <input type="password" id="Password" name="Password" placeholder="Password" required onblur="validate(event)"><br><br>
+        <span style="display: none; color:red" id="messages"></span>
+        <label for="Password">Re-enter to confirm</label><br>
+        <input type="password" id="Passwords" name="Passwords" placeholder="Password" required onblur="validate(event)"><br><br>
+        <button type="submit">Signup</button>
+        <p id="msg" style="color: aquamarine;"></p>
+        <p id="errmsg" style="color: red;"></p>
+        <p id="mmss" style="color: green;"></p>
+        <p id="errmmss" style="color: brown;"></p>
+    </form>
+    <!-- <script>
+        function validate(event) {
+            const pass = event.target.value;
+            const reenter = document.getElementById('Passwords').value;
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    
+            if (passwordPattern.test(pass)) {
+                document.getElementById('msg').innerText = '';
+            } else {
+                document.getElementById('errmsg').innerText = "Password should contain 8 characters with uppercase, lowercase, number, and a special character";
+            }
+    
+            if (pass == reenter) {
+                document.getElementById('mmss').innerText = "OK";
+                document.getElementById('errmmss').innerText = ''; // Clear mismatch error message
+            } else {
+                document.getElementById('errmmss').innerText = 'Your passwords do not match';
+                document.getElementById('mmss').innerText = ''; // Clear "OK" message
+            }
+            return false; // Prevent form submission
+        }
+    </script> -->
+
+
+    <!-- <script> function signFunction(){
+        var firstNameInput= document.getElementsByName("Username")[0];
+        var mailInput=document.getElementsByName("email")[0]
+        var passwordInput=document.getElementById("Password")
+        var confirmPass=document.getElementById("Passwords")
+        var mspan=document.getElementById("messages")
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var nameRegex = /^[a-zA-Z\s]+$/;
+        var passwordRegex =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if(!nameRegex.test(firstNameInput.value)){
+               mspan.innerText="Invalid First Name. Only alphabets and spaces are allowed.";
+               return false
+            }
+            if(!emailRegex.test(mailInput.value)){
+                mspan.innerText="Password does not meet the requirements.";
+                return false
+            }
+            if(!passwordRegex.test(passwordInput.value)){
+                mspan.innerText="Password does not meet the requirements.";
+                return false
+            }
+            if(passwordInput.value===confirmPass.value){
+               return true
+            }
+            else{
+                mspan.innerText="password does not match"
+                return false
+            }
+            mspan.innerText=" "
+            return true
+       }
+      </script> -->
+
+      <script>
+        function validate(event) {
+            const pass = event.target.value;
+            const reenter = document.getElementById('Passwords').value;
+            const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+            if (passwordPattern.test(pass)) {
+                document.getElementById('errmsg').innerText = '';
+            } else {
+                document.getElementById('errmsg').innerText = "Password should contain 8 characters with uppercase, lowercase, number, and a special character";
+            }
+
+            if (pass == reenter) {
+                document.getElementById('mmss').innerText = "OK";
+            } else {
+                document.getElementById('mmss').innerText = '';
+            }
+        }
+
+        function signFunction() {
+            const passwordInput = document.getElementById("Password").value;
+            const confirmPass = document.getElementById("Passwords").value;
+            const mspan = document.getElementById("errmsg");
+            const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+
+            if (!passwordRegex.test(passwordInput)) {
+                mspan.innerText = "Password does not meet the requirements.";
+                return false;
+            }
+
+            if (passwordInput === confirmPass) {
+                mspan.innerText = "";
+                return true;
+            } else {
+                mspan.innerText = "Password does not match";
+                return false;
+            }
+        }
+    </script>
+
+    
+
+    
+
+   </center> 
+</body>
+</html>
+
+
+

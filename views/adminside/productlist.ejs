@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/style/productlist.css">
+</head>
+<body>
+  
+    <div class="container">
+        <h1>Product List</h1>
+        <table class="product-table2">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Price</th>
+              <th>Image</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% products.forEach(product => { %>
+              <tr class="l2">
+                <td><%= product.productName %></td>
+                <td><%= product.productDescription %></td>
+                <td><%= product. productPrice %></td>
+                <td><img src="<%= product.imageUrl %>" alt="<%= product.productName %> Image" width="50" height="50"></td>
+                <td>
+                    <form method="GET" action="/admin/products/<%= product._id %>/edit" style="display:inline;">
+                      <button type="submit">Update</button>
+                    </form>
+                    <form method="POST" action="/admin/deleteProduct/<%= product._id %>?_method=DELETE" style="display:inline;">
+                      <button type="submit">Delete</button>
+                    </form>
+                  </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
